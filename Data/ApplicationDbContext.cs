@@ -8,7 +8,8 @@ namespace Habitsphere.Data
             :base(options)
             {
             }
-        public DbSet<Activity> Activities { get; set; }
-      }
+       public DbSet<Activity> Activities { get; set; }
+       public DbSet<ActivityLog> ActivityLogs { get; set; }
+    }
 
 }

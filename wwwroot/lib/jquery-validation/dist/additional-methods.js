@@ -664,8 +664,8 @@ $.validator.addMethod( "dateITA", function( value, element ) {
 		gg = parseInt( adata[ 0 ], 10 );
 		mm = parseInt( adata[ 1 ], 10 );
 		aaaa = parseInt( adata[ 2 ], 10 );
-		xdata = new Date( Date.UTC( aaaa, mm - 1, gg, 12, 0, 0, 0 ) );
-		if ( ( xdata.getUTCFullYear() === aaaa ) && ( xdata.getUTCMonth() === mm - 1 ) && ( xdata.getUTCDate() === gg ) ) {
+		xdata = new Created( Created.UTC( aaaa, mm - 1, gg, 12, 0, 0, 0 ) );
+		if ( ( xdata.getUTCFullYear() === aaaa ) && ( xdata.getUTCMonth() === mm - 1 ) && ( xdata.getUTCCreated() === gg ) ) {
 			check = true;
 		} else {
 			check = false;

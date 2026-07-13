@@ -5,10 +5,12 @@ namespace Habitsphere.Models
     {
         public int Id { get; set; }
         [Required]
-        public int Titile { get; set; }
+        public required string Title { get; set; }
         public string? Description { get; set; }
-        public bool IsCompleted { get; set; }
-        public int TimeSpentMinutes { get; set; }
-        public DateTime CreateDate { get; set; } = DateTime.Now;
+        public bool Completed { get; set; }
+        public int Time { get; set; }
+        public DateTime Created { get; set; } = DateTime.Now;
+        public ICollection<ActivityLog> Logs { get; set; } = new List<ActivityLog>();
     }
 }
+

@@ -15,7 +15,7 @@ namespace Habitsphere.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return RedirectToAction("Index", "Activities");
         }
 
         public IActionResult Privacy()

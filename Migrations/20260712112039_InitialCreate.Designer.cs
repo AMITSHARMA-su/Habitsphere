@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Habitsphere.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260707094217_InitialCreate")]
+    [Migration("20260712112039_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -33,20 +33,21 @@ namespace Habitsphere.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<bool>("Completed")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsCompleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("TimeSpentMinutes")
+                    b.Property<int>("Time")
                         .HasColumnType("int");
 
-                    b.Property<int>("Titile")
-                        .HasColumnType("int");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
